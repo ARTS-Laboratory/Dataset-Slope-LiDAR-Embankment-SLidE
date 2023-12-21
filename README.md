@@ -1,4 +1,4 @@
-# Dataset-Slope-LiDAR-embankment-SLidE
+# Dataset Slope LiDAR Embankment (SLidE)
 Dataset of Terrestrial LiDAR dataset that tracks the movement in embankments with high-plasticity clays through time.
 
 
