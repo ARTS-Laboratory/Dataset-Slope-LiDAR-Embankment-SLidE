@@ -1,5 +1,5 @@
 ## Fall 2021 Scan
-![Project Image](<./Fall 2021/assets/terryS21_groundex.png>)
+![Project Image](<./assets/terryS21_groundex.png>)
 
 # Test at Location X on YYYY MM DD
 
