@@ -35,7 +35,7 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
 
 Cite this data as: 
 
-Sadik Khan, AQM Zohuruzzaman, David Wambi, Austin {R.J.} Downey. “Dataset-Slope-LiDAR-embankment-(SLidE),” April 2024. [Online]. Available: URL: https://github.com/ARTS-Laboratory/Dataset-Slope-LiDAR-Embankment-SLidE
+Sadik Khan, AQM Zohuruzzaman, David Wambi, Austin R.J. Downey. “Dataset-Slope-LiDAR-embankment-(SLidE),” April 2024. [Online]. Available: URL: https://github.com/ARTS-Laboratory/Dataset-Slope-LiDAR-Embankment-SLidE
 
 #### Bibtex
 
