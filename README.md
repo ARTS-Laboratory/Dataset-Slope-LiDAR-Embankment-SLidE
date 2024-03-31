@@ -1,7 +1,7 @@
 # SLidE
 ## Slope LiDAR Embankment Dataset
 
-![Project Image](<./Data/Site-3/Summer 2021/assets/terryS21_groundex.png>)
+![Project Image](<./Data/2021-Summer/assets/terryS21_groundex.png>)
 
 Highway cross-slope embankment failures are common in central Mississippi due to the existence of high-plasticity clay. Monitoring these terrain slopes is crucial to ensure road safety, prevent infrastructure damage, and mitigate potential economic losses. This repository presents an open-source Terrestrial LiDAR dataset that tracks the movement in embankments with high-plasticity clays through time. Among the Slope LiDAR embankment (SLidE) data, a highway embankment along the Terry Road Exit from I-20 westbound in Jackson, MS has been selected to monitor the slope movement. The embankment slope surfaces were scanned at different time intervals between Summer 2021 and Fall/Winter 2022, capturing the slopes' changing conditions over time.
 
