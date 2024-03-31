@@ -39,10 +39,10 @@ Sadik Khan, AQM Zohuruzzaman, David Wambi, Austin {R.J.} Downey. “Dataset-Slop
 
 #### Bibtex
 
-@Article{Khan2024DatasetSlopeLidar,
-  author = {Sadik Khan and AQM Zohuruzzaman and David Wambi and Austin {R.J.} Downey},
-  title  = {Dataset-Slope-LiDAR-embankment-(SLidE)},
-  year   = {2024},
-  month  = apr,
-  url    = {https://github.com/ARTS-Laboratory/Dataset-Slope-LiDAR-Embankment-SLidE},
+@Article{Khan2024DatasetSlopeLidar,  
+  author = {Sadik Khan and AQM Zohuruzzaman and David Wambi and Austin {R.J.} Downey},  
+  title  = {Dataset-Slope-LiDAR-embankment-(SLidE)},  
+  year   = {2024},  
+  month  = apr,  
+  url    = {https://github.com/ARTS-Laboratory/Dataset-Slope-LiDAR-Embankment-SLidE},  
 }
