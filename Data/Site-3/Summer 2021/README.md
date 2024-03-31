@@ -1,9 +1,0 @@
-## Summer 2021 Scan
-![Project Image](<./assets/terryS21_groundex.png>)
-
-# Test at Location X on YYYY MM DD
-
-## Notes on the test
-1. It was cold ...
-1. It was sunny ...
-1. Person x did the test ....

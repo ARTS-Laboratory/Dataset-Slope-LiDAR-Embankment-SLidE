@@ -1,3 +1,3 @@
-## Fall 2021 Scan
+## 2023 Fall Scan
 ![Project Image](<./assets/f21_groundex.png>)
 
