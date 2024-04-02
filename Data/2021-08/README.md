@@ -1,3 +1,3 @@
-## 2021 Fall Scan
+## 2021 October Scan
 ![Project Image](<./assets/2021-fall.png>)
 
