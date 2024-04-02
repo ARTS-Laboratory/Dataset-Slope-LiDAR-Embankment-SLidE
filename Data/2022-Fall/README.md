@@ -1,3 +1,3 @@
 ## 2022 Fall Scan
-![Project Image](<./assets/f21_groundex.png>)
+![Project Image](<./assets/2022-fall.png>)
 

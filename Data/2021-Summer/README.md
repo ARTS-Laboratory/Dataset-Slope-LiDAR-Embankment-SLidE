@@ -1,3 +1,3 @@
 ## 2021 Summer Scan
-![Project Image](<./assets/terryS21_groundex.png>)
+![Project Image](<./assets/2021-summer.png>)
 
