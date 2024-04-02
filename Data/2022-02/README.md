@@ -1,3 +1,3 @@
 ## 2022 February Scan
-![Project Image](<./assets/2023-summer.png>)
+![Project Image](<./assets/2022-summer.png>)
 
