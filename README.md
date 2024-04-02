@@ -9,10 +9,6 @@ The LiDAR data acquisition and analysis involved the use of Terrestrial LiDAR eq
 
 The raw point clouds were refined through segmentation, eliminating undesirable points at the scan edges, as well as through the application of a ground extraction algorithm to remove vegetation and extraneous above-surface data points. The LiDAR focus was placed solely on the bare ground points. For georeferencing purposes, ground control points, aerial targets placed during UAV missions, and Global Navigation Satellite System (GNSS) measurements were employed. The comprehensive data acquisition approach enabled the precise alignment and superimposition of point clouds collected during different seasons. To optimize computational efficiency, these dense point clouds were sampled, increasing the minimum distance between data points. 
 
-## Current Scans
-- Summer 2021
-- Fall 2021
-
 ## Usage
 The datasets are currently provided in ```.laz``` format, a lightweight and easily interfaceable filetype containing the LiDAR pointcloud and scan metadata 
 
