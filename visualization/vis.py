@@ -5,7 +5,7 @@ import laspy
 import json
 
 #file_path = '../Data/Site-3/Fall 2021/laz/terryF21_S3_groundex.laz'
-file_path = '../Data/Site-3/Summer 2021/laz/terryS21_groundex_seg.laz'
+file_path = '2021-06.laz'
 
 with laspy.open(file_path) as file:
     las = file.read()
