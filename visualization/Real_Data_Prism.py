@@ -12,7 +12,7 @@ plt.rcParams.update({
 })
 
 # Load and clean PRISM CSV data
-file_path = 'PRISM_ppt_tmean_tdmean_stable_800m_202108_202309_32.2799_-90.2117.csv'
+file_path = 'PRISM_ppt_tmean_tdmean.csv'
 df = pd.read_csv(file_path, skiprows=10)
 df.columns = ['Date', 'Precipitation (inches)', 'Mean Temp (F)', 'Mean Dewpoint Temp (F)']
 df['Date'] = pd.to_datetime(df['Date'])

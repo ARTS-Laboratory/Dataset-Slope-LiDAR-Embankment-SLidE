@@ -1,0 +1,37 @@
+PRISM Time Series Data,,,
+Location:  Lat: 32.2799   Lon: -90.2117   Elev: 292ft,,,
+"Climate variables: Precipitation,Mean temp,Mean dewpoint temp",,,
+Spatial resolution: 800m,,,
+Period: 2021-08 - 2023-09,,,
+Dataset: AN91m,,,
+PRISM day definition: 24 hours ending at 1200 UTC on the day shown,,,
+Grid Cell Interpolation: On,,,
+Time series generated: 2025-May-12,,,
+Details: http://www.prism.oregonstate.edu/documents/PRISM_datasets.pdf,,,
+Date,Precipitation(inches),Mean temp (degrees F),Mean dewpoint temp (degrees F)
+2021-08,6.34,82.7,73.1
+2021-09,1.56,76.2,67.7
+2021-10,2.18,69.8,61
+2021-11,1.35,53.4,44.5
+2021-12,3.64,60.1,53
+2022-01,4.18,45.1,34.2
+2022-02,1.63,48.8,38.4
+2022-03,11.82,57.6,44.2
+2022-04,7.57,64.7,52.7
+2022-05,5.24,76.6,65.7
+2022-06,3.85,82,71
+2022-07,4.99,83.8,74.8
+2022-08,16.58,81.3,73.9
+2022-09,1.05,76.5,65.3
+2022-10,1.03,64.2,51.2
+2022-11,4.81,55.9,48
+2022-12,6.32,51.5,43.9
+2023-01,7.15,53,46.1
+2023-02,5.09,56.6,47.8
+2023-03,6.27,61.1,49.2
+2023-04,9.6,65.2,53.9
+2023-05,2.92,73.9,62.5
+2023-06,4.35,79.6,70.1
+2023-07,3.31,83.8,73.9
+2023-08,0.08,87.3,71.3
+2023-09,0.96,80.2,64.6
