@@ -44,7 +44,8 @@ ax2.spines['right'].set_color('black')
 # X-axis formatting
 ax1.set_xlabel('Date', fontsize=9)
 ax1.tick_params(axis='x', labelrotation=45, labelsize=8)
-ax1.xaxis.set_major_locator(mdates.AutoDateLocator())
+ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=2))  # every month
+ax1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))  # custom format
 
 # Combine legends and move to the top (outside)
 lines1, labels1 = ax1.get_legend_handles_labels()
