@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
-# Update plot settings for LaTeX-style formatting (no real LaTeX engine required)
+# Plot configuration
 plt.rcParams.update({
     'text.usetex': False,
     'font.family': 'serif',
@@ -11,43 +12,55 @@ plt.rcParams.update({
     'mathtext.fontset': 'custom'
 })
 
-# Load and clean PRISM CSV data
+# Load and clean data
 file_path = 'PRISM_ppt_tmean_tdmean.csv'
 df = pd.read_csv(file_path, skiprows=10)
 df.columns = ['Date', 'Precipitation (inches)', 'Mean Temp (F)', 'Mean Dewpoint Temp (F)']
 df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 
-# Create plot
-fig, ax1 = plt.subplots(figsize=(12, 4))
+# --- Begin Plotting ---
+fig, ax1 = plt.subplots(figsize=(6, 6), dpi=300)
 
-# Precipitation as bars (primary y-axis)
-ax1.bar(df.index, df['Precipitation (inches)'], color='blue', label='Precipitation (inches)', width=20)
-ax1.set_ylabel('Inches', color='black')
-ax1.tick_params(axis='y', labelcolor='black')
+# Move spines (axes lines) behind content
+ax1.set_axisbelow(True)
+
+# Plot precipitation as bars
+bars = ax1.bar(df.index, df['Precipitation (inches)'],
+               color='blue', width=20, label='Precipitation (inches)')
+ax1.set_ylabel('Precipitation (inches)', fontsize=9, color='black')
+ax1.tick_params(axis='y', labelcolor='black', labelsize=8)
 ax1.spines['left'].set_color('black')
+ax1.grid(True, which='major', axis='y', linestyle='--', linewidth=0.5)
 
-# Temperature and dewpoint on secondary y-axis
+# Twin axis for temperature
 ax2 = ax1.twinx()
-ax2.plot(df.index, df['Mean Temp (F)'], color='red', linewidth=2, label='Mean Temp (F)')
-ax2.plot(df.index, df['Mean Dewpoint Temp (F)'], color='green', linewidth=2, label='Mean Dewpoint Temp (F)')
-ax2.set_ylabel('Temperature (°F)', color='black')
-ax2.tick_params(axis='y', labelcolor='black')
+ax2.plot(df.index, df['Mean Temp (F)'], color='red', linewidth=1.5, label='Mean Temp (F)')
+ax2.plot(df.index, df['Mean Dewpoint Temp (F)'], color='green', linewidth=1.5, label='Mean Dewpoint Temp (F)')
+ax2.set_ylabel('Temperature (°F)', fontsize=9, color='black')
+ax2.tick_params(axis='y', labelcolor='black', labelsize=8)
 ax2.spines['right'].set_color('black')
 
 # X-axis formatting
-ax1.set_xlabel('Date')
-ax1.tick_params(axis='x', rotation=45)
+ax1.set_xlabel('Date', fontsize=9)
+ax1.tick_params(axis='x', labelrotation=45, labelsize=8)
+ax1.xaxis.set_major_locator(mdates.AutoDateLocator())
 
-# Combine legends from both axes
+# Combine legends and move to the top (outside)
 lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
-legend = ax2.legend(lines1 + lines2, labels1 + labels2, loc='upper right', frameon=True)
+combined_lines = lines1 + lines2
+combined_labels = labels1 + labels2
+
+legend = fig.legend(combined_lines, combined_labels,
+                    loc='upper center', bbox_to_anchor=(0.5, 1),
+                    ncol=3, fontsize=8, frameon=True)
 legend.get_frame().set_facecolor('white')
 legend.get_frame().set_edgecolor('black')
 
-# Layout and display
-fig.tight_layout()
-plt.title('PRISM Climate Data: Precipitation and Temperature Trends')
-plt.show()
+# Title and layout
+#plt.title('PRISM Climate Data: Precipitation and Temperature Trends', fontsize=10, pad=25)
+fig.tight_layout(rect=[0, 0, 1, 0.95])  # Leave space for top legend
 
+# Show plot
+plt.show()
