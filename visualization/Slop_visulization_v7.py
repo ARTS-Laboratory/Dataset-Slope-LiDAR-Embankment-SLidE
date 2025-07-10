@@ -5,9 +5,11 @@ from matplotlib.path import Path
 from matplotlib.widgets import Button
 import os
 import sys
+import plotly.graph_objects as go
+
 
 # -------------------- Step 1: Load Point Cloud -------------------- #
-laz_path = "C:/Users/golzardm/Documents/Dataset-Slope-LiDAR-Embankment-SLidE/Data/2021-06/laz/2021-06.laz"
+laz_path = "C:/Users/golzardm/Documents/Dataset-Slope-LiDAR-Embankment-SLidE/Data/2024-02/TerryRoad_Feb2024_GE_ReSampled.laz"
 las = laspy.read(laz_path)
 xyz = np.vstack((las.x, las.y, las.z)).T
 
@@ -21,7 +23,7 @@ if xyz.shape[0] > num_points:
     xyz = xyz[idx]
 
 # -------------------- Step 3: Z-Threshold Filtering -------------------- #
-z_threshold = 93
+z_threshold = 203
 xyz = xyz[xyz[:, 2] > z_threshold]
 
 # -------------------- Step 4: Interactive Polygon Selection -------------------- #
@@ -53,7 +55,7 @@ btn_done = Button(ax_done, 'DONE')
 btn_done.on_clicked(ondone)
 
 cid = fig.canvas.mpl_connect('button_press_event', onclick)
-plt.show(block=True)  # 🔁This ensures it waits for you to close the window
+plt.show(block=True)  # This ensures it waits for you to close the window
 
 # -------------------- Step 5: Polygon Cleanup -------------------- #
 if not plot_closed or len(clicked_points) < 3:
@@ -73,7 +75,7 @@ print(f" Remaining: {len(xyz_cleaned)} points")
 
 # -------------------- Step 6: Show Cleaned Plot -------------------- #
 if len(xyz_cleaned) == 0:
-    print("⚠️ Cleaned point cloud is empty — not plotting or saving.")
+    print(" Cleaned point cloud is empty — not plotting or saving.")
     sys.exit()
 
 fig2, ax2 = plt.subplots(figsize=(10, 6))
@@ -109,3 +111,4 @@ las_cleaned.header.offsets = offsets
 las_cleaned.write(output_path)
 print(" LAS file saved to:")
 print(os.path.abspath(output_path))
+
