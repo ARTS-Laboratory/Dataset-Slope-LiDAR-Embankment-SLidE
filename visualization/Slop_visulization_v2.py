@@ -25,7 +25,7 @@ else:
 print(f"Subset Z range (min, max): ({np.min(xyz_subset[:, 2])}, {np.max(xyz_subset[:, 2])})")
 #%%
 # Remove the adjacent road (filter by elevation)
-z_threshold = 203  # Set based on plot, but verify with raw data
+z_threshold = 208  # Set based on plot, but verify with raw data
 road_mask = xyz_subset[:, 2] <= z_threshold  # Use <= to include points at exactly 89
 xyz_cleaned = xyz_subset[~road_mask]
 
