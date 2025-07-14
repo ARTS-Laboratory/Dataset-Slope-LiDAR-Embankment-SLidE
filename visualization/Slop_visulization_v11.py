@@ -15,8 +15,8 @@ z_base = a * x + b * y + c * (x**2 + y**2)
 
 # Add a hump and a cavity
 z = z_base + \
-    2.5 * np.exp(-((x - 25)**2 + (y - 30)**2) / 3) - \
-    1.3 * np.exp(-((x - 15)**2 + (y - 10)**2) / 6)
+    1 * np.exp(-((x - 25)**2 + (y - 30)**2) / 3) - \
+    1 * np.exp(-((x - 15)**2 + (y - 10)**2) / 6)
 
 X = np.column_stack((x.flatten(), y.flatten(), z.flatten()))
 np.save("synthetic_curved_surface.npy", X)  # Save for next section
@@ -44,6 +44,7 @@ import laspy
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 # Load the synthetic surface
 X = np.load("C:/Users/golzardm/Documents/Dataset-Slope-LiDAR-Embankment-SLidE/visualization/synthetic_curved_surface.npy")
 x, y, z = X[:, 0], X[:, 1], X[:, 2]
@@ -69,10 +70,25 @@ labels = db.labels_
 num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
 
 # Step 5: Plot detected abnormalities with cluster labels
+
+# Plot Format
+plt.rcParams.update({
+    'image.cmap': 'viridis',
+    'font.serif': [
+        'Times New Roman', 'Times', 'DejaVu Serif', 'Bitstream Vera Serif',
+        'Computer Modern Roman', 'New Century Schoolbook', 'Century Schoolbook L',
+        'Utopia', 'ITC Bookman', 'Bookman', 'Nimbus Roman No9 L', 'Palatino',
+        'Charter', 'serif'
+    ],
+    'font.family': 'serif',
+    'font.size': 14,
+})
+
+# Step 5: Plot detected abnormalities with cluster labels
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
 scatter = ax.scatter(abnormal_points[:, 0], abnormal_points[:, 1], abnormal_points[:, 2], 
-                     c=labels, cmap='tab10', s=6)
+                     c=labels, cmap='viridis', s=6)
 ax.set_title(f"Detected Abnormalities via Residuals + DBSCAN Clustering ({num_clusters} clusters)")
 ax.set_xlabel("X")
 ax.set_ylabel("Y")
