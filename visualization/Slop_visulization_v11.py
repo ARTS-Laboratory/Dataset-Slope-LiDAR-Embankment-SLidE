@@ -96,7 +96,7 @@ ax.set_zlabel("Z")
 plt.tight_layout()
 plt.show()
 
-# ✅ Step 6: Save abnormalities to LAS file
+#  Step 6: Save abnormalities to LAS file
 header = laspy.LasHeader(point_format=3, version="1.2")
 header.x_scale = header.y_scale = header.z_scale = 0.001
 header.x_offset = header.y_offset = header.z_offset = 0.0
@@ -107,9 +107,9 @@ las.y = abnormal_points[:, 1]
 las.z = abnormal_points[:, 2]
 las.write("abnormalities_ransac_dbscan.las")
 
-print("✅ Abnormalities saved to 'abnormalities_ransac_dbscan.las'")
+print("Abnormalities saved to 'abnormalities_ransac_dbscan.las'")
 
-# ✅ Step 7: Print fit evaluation metrics
+# Step 7: Print fit evaluation metrics
 r2 = r2_score(z, z_pred)
 std_residual = np.std(residuals)
 
