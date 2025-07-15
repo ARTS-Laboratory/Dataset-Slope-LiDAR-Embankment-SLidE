@@ -68,7 +68,7 @@ print(" Synthetic noisy surface saved as both .npy and .las files.")
 
 
 
-#%% Step 2
+#%% RANSAC AND DBSCAN 
 
 from sklearn.linear_model import RANSACRegressor, LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
@@ -80,35 +80,35 @@ import laspy
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the point cloud from .las file
+#  point cloud from .las file
 las = laspy.read("C:/Users/golzardm/Documents/Dataset-Slope-LiDAR-Embankment-SLidE/visualization/synthetic_surface.las")
 X = np.vstack((las.x, las.y, las.z)).T  # Shape: (N, 3)
 
-# Extract X, Y, Z
+# Extracting X, Y, Z
 xy = X[:, :2]
 z_true = X[:, 2]
 
-# Step 1: Fit a smooth surface using polynomial regression (RANSAC for robustness)
+#  fit a smooth surface using polynomial regression (RANSAC for robustness)
 degree = 2
 poly = PolynomialFeatures(degree=degree)
 model = make_pipeline(poly, RANSACRegressor(LinearRegression(), residual_threshold=0.1))
 model.fit(xy, z_true)
 
-# Step 2: Predict smooth surface and compute residuals
+#  Predict smooth surface and compute residuals
 z_pred = model.predict(xy)
 residuals = z_true - z_pred
 
-# Step 3: Threshold the residuals to detect abnormalities
-threshold = 0.25  # Sensitivity threshold
+#  threshold adjustment the residuals to detect abnormalities
+threshold = 0.35  # Sensitivity threshold  (Lower=More sensitive → detects tiny bumps, even noise might be flagged & Higher=Less sensitive → detects only larger anomalies like humps or cavities)
 abnormal_indices = np.where(np.abs(residuals) > threshold)[0]
 abnormal_points = X[abnormal_indices]
 
-# Step 4: Apply DBSCAN clustering on abnormal regions
+#  apply DBSCAN clustering on abnormal regions
 db = DBSCAN(eps=1.0, min_samples=5).fit(abnormal_points[:, :2])
 labels = db.labels_
 num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
 
-# Step 5: Plot detected abnormalities with residual magnitude
+# Plot detected abnormalities with residual magnitude
 plt.rcParams.update({
     'image.cmap': 'viridis',
     'font.serif': [
@@ -134,7 +134,7 @@ ax.set_zlabel("Z")
 plt.tight_layout()
 plt.show()
 
-# Step 6: Save abnormalities to LAS file
+# saving abnormalities to LAS file
 header = laspy.LasHeader(point_format=3, version="1.2")
 header.x_scale = header.y_scale = header.z_scale = 0.001
 header.x_offset = header.y_offset = header.z_offset = 0.0
@@ -144,9 +144,9 @@ las_out.x = abnormal_points[:, 0]
 las_out.y = abnormal_points[:, 1]
 las_out.z = abnormal_points[:, 2]
 las_out.write("abnormalities_ransac_dbscan.las")
-print("✅ Abnormalities saved to 'abnormalities_ransac_dbscan.las'")
+print(" Abnormalities saved to 'abnormalities_ransac_dbscan.las'")
 
-# Step 7: Print evaluation
+# Print evaluation
 r2 = r2_score(z_true, z_pred)
 std_residual = np.std(residuals)
 
