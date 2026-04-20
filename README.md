@@ -40,5 +40,5 @@ Sadik Khan, AQM Zohuruzzaman, David Wambi, Austin R.J. Downey. “Dataset-Slope-
   title  = {Dataset-Slope-LiDAR-embankment-(SLidE)},  
   month  = apr,  
   url    = {https://github.com/ARTS-Laboratory/Dataset-Slope-LiDAR-Embankment-SLidE},  
-notes  = {Accessed: Month dd, yyyy},   
+note  = {Accessed: Month dd, yyyy},   
 }
