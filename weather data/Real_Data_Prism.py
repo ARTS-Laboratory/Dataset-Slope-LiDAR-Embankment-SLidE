@@ -40,11 +40,12 @@ ax2.set_ylabel('Temperature / Soil Moisture', fontsize=9, color='black')
 ax2.tick_params(axis='y', labelcolor='black', labelsize=8)
 ax2.spines['right'].set_color('black')
 
-# X-axis formatting
+# X-axis formatting — ONLY CHANGE: '%Y-%m' → '%b %Y'
 ax1.set_xlabel('Date', fontsize=9)
 ax1.tick_params(axis='x', labelrotation=45, labelsize=8)
+plt.setp(ax1.get_xticklabels(), ha='right')
 ax1.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
-ax1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+ax1.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))  # ← changed here
 
 # Combine legends
 lines1, labels1 = ax1.get_legend_handles_labels()
