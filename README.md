@@ -11,8 +11,8 @@ The raw point clouds were refined through segmentation, eliminating undesirable 
 
 ## Publications
 Select publications that use this dataset are:
-[1] AQM Zohuruzzaman, David P. Wamai, Weicong Feng, Sadik Khan, Austin R. J. Downey, Jie Wei, Erik Blasch, and Paul T. Schrader. Highway slope monitoring using 3D laser scanning at different seasons. In Kannappan Palaniappan and Gunasekaran Seetharaman, editors, Geospatial Informatics XIV. SPIE, June 2024. doi:10.1117/12.3016172
-[2] Austin R. J. Downey, Jie Wei, A. Q. M. Zohuruzzaman, Paul T. Schrader, Sadik Khan, Jason Bakos, Weicong Feng, Erik Blasch, and Erika Ardiles-Cruz. Earthen Embankment Monitoring Using LiDAR Data by Randomized Consensus of Topological Data Analysis, pages 69-77. Springer Nature Switzerland, August 2025. doi:10.1007/978-3-031-94895-4_7
+1. AQM Zohuruzzaman, David P. Wamai, Weicong Feng, Sadik Khan, Austin R. J. Downey, Jie Wei, Erik Blasch, and Paul T. Schrader. Highway slope monitoring using 3D laser scanning at different seasons. In Kannappan Palaniappan and Gunasekaran Seetharaman, editors, Geospatial Informatics XIV. SPIE, June 2024. doi:10.1117/12.3016172
+1. Austin R. J. Downey, Jie Wei, A. Q. M. Zohuruzzaman, Paul T. Schrader, Sadik Khan, Jason Bakos, Weicong Feng, Erik Blasch, and Erika Ardiles-Cruz. Earthen Embankment Monitoring Using LiDAR Data by Randomized Consensus of Topological Data Analysis, pages 69-77. Springer Nature Switzerland, August 2025. doi:10.1007/978-3-031-94895-4_7
 
 ## Usage
 The datasets are currently provided in ```.laz``` format, a lightweight and easily interfaceable filetype containing the LiDAR pointcloud and scan metadata 
