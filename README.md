@@ -9,6 +9,11 @@ The LiDAR data acquisition and analysis involved the use of Terrestrial LiDAR eq
 
 The raw point clouds were refined through segmentation, eliminating undesirable points at the scan edges, as well as through the application of a ground extraction algorithm to remove vegetation and extraneous above-surface data points. The LiDAR focus was placed solely on the bare ground points. For georeferencing purposes, ground control points, aerial targets placed during UAV missions, and Global Navigation Satellite System (GNSS) measurements were employed. The comprehensive data acquisition approach enabled the precise alignment and superimposition of point clouds collected during different seasons. To optimize computational efficiency, these dense point clouds were sampled, increasing the minimum distance between data points. 
 
+## Publications
+Select publications that use this dataset are:
+[1] AQM Zohuruzzaman, David P. Wamai, Weicong Feng, Sadik Khan, Austin R. J. Downey, Jie Wei, Erik Blasch, and Paul T. Schrader. Highway slope monitoring using 3D laser scanning at different seasons. In Kannappan Palaniappan and Gunasekaran Seetharaman, editors, Geospatial Informatics XIV. SPIE, June 2024. doi:10.1117/12.3016172
+[2] Austin R. J. Downey, Jie Wei, A. Q. M. Zohuruzzaman, Paul T. Schrader, Sadik Khan, Jason Bakos, Weicong Feng, Erik Blasch, and Erika Ardiles-Cruz. Earthen Embankment Monitoring Using LiDAR Data by Randomized Consensus of Topological Data Analysis, pages 69-77. Springer Nature Switzerland, August 2025. doi:10.1007/978-3-031-94895-4_7
+
 ## Usage
 The datasets are currently provided in ```.laz``` format, a lightweight and easily interfaceable filetype containing the LiDAR pointcloud and scan metadata 
 
